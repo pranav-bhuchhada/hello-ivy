@@ -17,9 +17,26 @@
    under the License.
 -->
 <ivy-module version="2.0">
-    <info organisation="org.apache" module="hello-ivy"/>
-    <dependencies>
-        <dependency org="commons-lang" name="commons-lang" rev="2.6"/>
-        <dependency org="commons-cli" name="commons-cli" rev="1.4"/>
-    </dependencies>
+  <info organisation="org.apache" module="hello-ivy" />
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/xml-apis/xml-apis -->
+    <dependency org="xml-apis" name="xml-apis" rev="1.3.04" conf="xml->default" />
+
+    <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.ant/sonarqube-ant-task -->
+    <dependency org="org.sonarsource.scanner.ant" name="sonarqube-ant-task" rev="2.6.0.1426" conf="sonar->default" />
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+    <dependency org="org.springframework" name="spring-webmvc" rev="4.3.6.RELEASE" conf="external->default" />
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+    <dependency org="org.springframework" name="spring-orm" rev="4.3.6.RELEASE" conf="external->default" />
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+    <dependency org="org.springframework" name="spring-aspects" rev="4.3.6.RELEASE" conf="external->default" />
+
+    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+    <dependency org="org.aspectj" name="aspectjrt" rev="1.8.9" conf="external->default" />
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+    <dependency org="org.springframework" name="spring-context-support" rev="4.3.6.RELEASE" conf="external->default" />
+  </dependencies>
 </ivy-module>
