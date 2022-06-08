@@ -21,6 +21,7 @@
     <property name="lib.dir" value="lib"/>
     <property name="build.dir" value="build"/>
     <property name="src.dir" value="src"/>
+    <property name="project.version" value="1.0.0"/>
 
     <!-- paths used for compilation and run  -->
     <path id="lib.path.id">
@@ -45,13 +46,22 @@
         <ivy:report todir="${build.dir}"/>
     </target>
 
+    <target name="prepare-pom" description="Generate POM">
+        <ivy:makepom ivyfile="ivy.xml" pomfile="pom.xml" conf="default,runtime">
+            <mapping conf="default" scope="compile"/>
+            <mapping conf="runtime" scope="runtime"/>
+            <dependency group="com.acme" artifact="acme-logging" version="1.0" optional="true"/>
+        </ivy:makepom>
+    </target>
+    
+
     <!-- =================================
           target: run
          ================================= -->
     <target name="run" depends="resolve" description="--> compile and run the project">
         <mkdir dir="${build.dir}"/>
         <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" includeAntRuntime="false"/>
-        <property name="msg" value="hello ivy !"/>
+        <property name="msg" value="hello pranav !"/>
         <java classpathref="run.path.id" classname="example.HelloConsole">
             <arg value="-message"/>
             <arg value="${msg}"/>

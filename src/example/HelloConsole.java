@@ -40,7 +40,7 @@ public final class HelloConsole {
         CommandLineParser parser = new DefaultParser();
         CommandLine line = parser.parse(options, args);
 
-        String  message = line.getOptionValue("m", "Hello Ivy!");
+        String  message = line.getOptionValue("m", "Hello Pranav!");
         System.out.println("standard message : " + message);
         System.out.println("capitalized by " + WordUtils.class.getName()
             + " : " + WordUtils.capitalizeFully(message));
