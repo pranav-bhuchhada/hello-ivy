@@ -48,7 +48,7 @@
 
 	<target name="prepare-pom" description="Generate POM">
 		<ivy:makepom ivyfile="ivy.xml" pomfile="pom.xml">
-            <mapping conf="mylib" scope="compile"/>
+            <mapping conf="myconf" scope="compile"/>
         </ivy:makepom>
 	</target>
     
